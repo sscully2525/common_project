@@ -58,6 +58,10 @@ body > a:focus{
     left: 200px;
 }
 
+h1{
+    animation: header 5s infinite;
+}
+
 .header-content-pets{
     background-image: url("../images/pets_background.jpg");
     display: flex;
@@ -160,15 +164,22 @@ p{
 
 @keyframes header {
     0% {
-        background-color: lightskyblue;
+        color: maroon;
+    }
+    25% {
+        color: darkblue;
     }
     50% {
-        background-color: lightgray;
+        color: brown;
+    }
+    75% {
+        color: black;
     }
     100% {
-        background-color: lightskyblue;
+        color: maroon;
     }
 }
+
 
 
 
