@@ -216,6 +216,10 @@ p{
         margin-top: 16px;
         animation: none;
     }
+    nav a, nav a:hover {
+        animation: none;
+        transition: none;
+    }
 }
 
 @keyframes header {
