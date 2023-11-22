@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
     <title>Pets</title>
 </head>
 <body>
     <a href="#pets" class="skip-link">Skip to Main Content</a>
     <nav>
+        <img src="images/icon.jpeg" alt="My initials" aria-label="initials ss, my name" class="nav-icon">
+
         <ul>
             <li><a href="index.html" class="current-page">Pets</a></li>
             <li><a href="travel.html">Travel</a></li>
@@ -19,6 +23,12 @@
     <header>
         <div class = "header-content-pets">
         <h1> Pets </h1>
+        <button id="changeColorButton">Change Background Color</button>
+        <div class="name-generator">
+            <button id="generateNameButton">Generate Pet Name for Fun!</button>
+            <p id="petNameDisplay">Click the button to generate a name!</p>
+        </div>
+
     </div>
     </header>
 
@@ -124,6 +134,17 @@
         </div>
 
     </main>
+    <script>
+        document.getElementById('changeColorButton').onclick = function() {
+            document.body.style.backgroundColor = 'lightpink';
+        };
+        document.getElementById('generateNameButton').onclick = function() {
+        const names = ["Buddy", "Bella", "Charlie", "Luna", "Lucy", "Max", "Daisy", "Bailey", "Cooper", "Molly", "Winnie", "Oscar", "Honey", "Bear", "Cheeto", "Milktea", "Jax"];
+        const randomName = names[Math.floor(Math.random() * names.length)];
+        document.getElementById('petNameDisplay').innerText = randomName;
+    };
+    </script>
+
 </body>
 </html>
 

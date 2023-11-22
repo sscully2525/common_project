@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
     <title>Recipes</title>
 </head>
 <body>
     <a href="#recipes" class="skip-link">Skip to Main Content</a>
     <nav>
+        <img src="images/icon.jpeg" alt="My initials" aria-label="initials ss, my name" class="nav-icon">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="travel.html">Travel</a></li>
@@ -19,6 +22,7 @@
     <header>
         <div class = "header-content-recipes">
         <h1> Recipes </h1>
+        <button id="changeColorButton">Change Background Color</button>
     </div>
     </header>
 
@@ -129,5 +133,11 @@
             </div>
         </div>
     </main>
+    <script>
+        document.getElementById('changeColorButton').onclick = function() {
+            document.body.style.backgroundColor = 'purple';
+        };
+    </script>
 </body>
+
 </html>

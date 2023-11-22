@@ -3,6 +3,7 @@ body, html {
     padding: 0;
     background-color: lightgray;
     font-size: 100%;
+    font-family: 'Open Sans', sans-serif;
 }
 
 div{
@@ -10,6 +11,38 @@ div{
     width: 100%;
     box-sizing: border-box;
 }
+
+h1, h2, h3 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.name-generator {
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+}
+
+#generateNameButton {
+    background-color: #214A22;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#petNameDisplay {
+    color: #333;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+
+/* Mobile Styles */
 nav {
     display: flex;
     justify-content: center;
@@ -23,7 +56,7 @@ nav {
 
 nav ul {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0;
@@ -71,13 +104,26 @@ nav a:hover, nav a:focus {
     color: red;
 }
 
-body > a{
+body > a {
     position: absolute;
-    left: -400px
+    left: -999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -1;
 }
 
-body > a:focus{
-    left: 85px;
+body > a:focus {
+    left: 125px;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    z-index: 10000;
+    top: 10px;
+    background-color: #FFF;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #000;
 }
 
 
@@ -121,6 +167,8 @@ body > a:focus{
 
 h1{
     animation: header 5s infinite;
+    background: #FFF;
+    padding: 10px;
 }
 
 h2{
@@ -188,7 +236,12 @@ p{
     }
 }
 
+.nav-icon {
+    height: 100px;
+    vertical-align: middle;
+}
 
+/* Tablet Styles */
 @media only screen and (min-width: 600px) {
     nav {
         background-color: #4CAF50;
@@ -200,7 +253,7 @@ p{
         align-items: center;
     }
     nav ul {
-        flex-direction: column;
+        flex-direction: row;
         padding: 10px;
     }
     nav li {
@@ -209,13 +262,104 @@ p{
     }
     nav a {
         background-color: #8BC34A;
-        color: #FFF;
+        color: black;
         padding: 10px 20px;
         border-radius: 5px;
         transition: background-color 0.5s, color 0.5s;
+    }
+    .current-page {
+        font-weight: bold;
+        color: darkblue;
+        background-color: lightblue;
     }
     nav a:hover, nav a:focus {
         background-color: #66BB6A;
         color: #003300;
     }
+    h1 {
+        font-size: 2em;
+    }
+}
+
+
+/* Desktop Styles */
+@media only screen and (min-width: 900px) {
+    .content {
+        width: 80%;
+        margin: auto;
+    }
+
+    nav ul {
+        justify-content: space-around;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    h1, h2, h3, p {
+        font-size: 1.2em;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: lightsalmon;
+        border-color: lightsalmon;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .parallax {
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    nav a {
+        background-color: coral;
+    }
+
+    nav a:hover {
+        color: black;
+        border-bottom: 3px solid #FF5733;
+        animation: slide-in 0.5s forwards;
+    }
+
+    @keyframes slide-in {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    .content img:hover {
+        filter: grayscale(50%);
+    }
+
+    .sticky-element {
+        position: sticky;
+        top: 10px;
+    }
+
+    @keyframes pop-in {
+        0% { transform: scale(0); opacity: 0; }
+        80% { transform: scale(1.2); }
+        100% { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+        animation: pop-in 1s ease;
+        font-size: 3em;
+    }
+
+
 }
